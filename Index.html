@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Collect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Collect</h1>
+  <p id="slogan">Collecter les bonnes informations mène à la réussite</p>
+
+  <select id="languageSwitcher">
+    <option value="fr">FR</option>
+    <option value="en">EN</option>
+  </select>
+</header>
+
+<main>
+  <!-- FORM -->
+  <form id="collectForm"
+        action="https://formspree.io/f/2933297241487572058"
+        method="POST">
+
+    <section class="form-section">
+      <h2 data-i18n="s1_title"></h2>
+
+      <label>
+        <span data-i18n="project_name"></span>
+        <input type="text" name="project_name" required />
+      </label>
+
+      <label>
+        <span data-i18n="project_description"></span>
+        <textarea name="project_description"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="problem"></span>
+        <textarea name="problem"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="priority_feature"></span>
+        <textarea name="priority_feature"></textarea>
+      </label>
+    </section>
+
+    <section class="form-section">
+      <h2 data-i18n="s2_title"></h2>
+
+      <label>
+        <span data-i18n="structure"></span>
+        <textarea name="structure"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="options"></span>
+        <textarea name="options"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="combos"></span>
+        <select name="combos">
+          <option value="Oui">Oui</option>
+          <option value="Non">Non</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="form-section">
+      <h2 data-i18n="s3_title"></h2>
+
+      <label>
+        <span data-i18n="access"></span>
+        <textarea name="access"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="payment"></span>
+        <textarea name="payment"></textarea>
+      </label>
+    </section>
+
+    <section class="form-section">
+      <h2 data-i18n="s6_title"></h2>
+
+      <label>
+        <span data-i18n="mvp"></span>
+        <textarea name="mvp"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="future"></span>
+        <textarea name="future"></textarea>
+      </label>
+
+      <label>
+        <span data-i18n="constraints"></span>
+        <textarea name="constraints"></textarea>
+      </label>
+    </section>
+
+    <p class="consent">
+      <input type="checkbox" required />
+      <span data-i18n="consent"></span>
+    </p>
+
+    <button type="button" id="previewBtn" data-i18n="preview"></button>
+
+    <!-- PREVIEW -->
+    <div id="preview" class="hidden">
+      <h2 data-i18n="preview_title"></h2>
+      <div id="previewContent"></div>
+
+      <div class="preview-actions">
+        <button type="button" id="editBtn" data-i18n="edit"></button>
+        <button type="submit" data-i18n="send"></button>
+        <button type="button" id="pdfBtn">PDF</button>
+      </div>
+    </div>
+  </form>
+</main>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
