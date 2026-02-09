@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -12,116 +12,153 @@
   <h1>Collect</h1>
   <p id="slogan">Collecter les bonnes informations mène à la réussite</p>
 
-  <select id="languageSwitcher">
-    <option value="fr">FR</option>
-    <option value="en">EN</option>
-  </select>
+  <div class="top-bar">
+    <select id="languageSwitcher">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
 </header>
 
 <main>
-  <!-- FORM -->
-  <form id="collectForm"
-        action="https://formspree.io/f/2933297241487572058"
-        method="POST">
+<form id="collectForm"
+      action="https://formspree.io/f/2933297241487572058"
+      method="POST">
 
-    <section class="form-section">
-      <h2 data-i18n="s1_title"></h2>
+<!-- STEP 1 -->
+<section class="step active">
+  <h2 data-i18n="step1_title"></h2>
 
-      <label>
-        <span data-i18n="project_name"></span>
-        <input type="text" name="project_name" required />
-      </label>
+  <label>
+    <span data-i18n="project_name"></span>
+    <small data-i18n="project_name_help"></small>
+    <input type="text" name="project_name" required />
+  </label>
 
-      <label>
-        <span data-i18n="project_description"></span>
-        <textarea name="project_description"></textarea>
-      </label>
+  <label>
+    <span data-i18n="project_type"></span>
+    <small data-i18n="project_type_help"></small>
+    <select name="project_type">
+      <option>Site web</option>
+      <option>Application web</option>
+      <option>Application mobile</option>
+      <option>Plateforme / SaaS</option>
+    </select>
+  </label>
 
-      <label>
-        <span data-i18n="problem"></span>
-        <textarea name="problem"></textarea>
-      </label>
+  <label>
+    <span data-i18n="project_desc"></span>
+    <small data-i18n="project_desc_help"></small>
+    <textarea name="project_desc"></textarea>
+  </label>
+</section>
 
-      <label>
-        <span data-i18n="priority_feature"></span>
-        <textarea name="priority_feature"></textarea>
-      </label>
-    </section>
+<!-- STEP 2 -->
+<section class="step">
+  <h2 data-i18n="step2_title"></h2>
 
-    <section class="form-section">
-      <h2 data-i18n="s2_title"></h2>
+  <label>
+    <span data-i18n="goal"></span>
+    <small data-i18n="goal_help"></small>
+    <select name="goal">
+      <option>Générer des ventes</option>
+      <option>Présenter mon activité</option>
+      <option>Automatiser un processus</option>
+      <option>Gagner du temps</option>
+    </select>
+  </label>
 
-      <label>
-        <span data-i18n="structure"></span>
-        <textarea name="structure"></textarea>
-      </label>
+  <label>
+    <span data-i18n="success"></span>
+    <small data-i18n="success_help"></small>
+    <textarea name="success"></textarea>
+  </label>
 
-      <label>
-        <span data-i18n="options"></span>
-        <textarea name="options"></textarea>
-      </label>
+  <label>
+    <span data-i18n="urgency"></span>
+    <small data-i18n="urgency_help"></small>
+    <input type="range" min="1" max="5" name="urgency" />
+  </label>
+</section>
 
-      <label>
-        <span data-i18n="combos"></span>
-        <select name="combos">
-          <option value="Oui">Oui</option>
-          <option value="Non">Non</option>
-        </select>
-      </label>
-    </section>
+<!-- STEP 3 -->
+<section class="step">
+  <h2 data-i18n="step3_title"></h2>
 
-    <section class="form-section">
-      <h2 data-i18n="s3_title"></h2>
+  <fieldset>
+    <legend data-i18n="features"></legend>
+    <small data-i18n="features_help"></small>
 
-      <label>
-        <span data-i18n="access"></span>
-        <textarea name="access"></textarea>
-      </label>
+    <label><input type="checkbox" name="features" value="auth"> Connexion utilisateur</label>
+    <label><input type="checkbox" name="features" value="payment"> Paiement</label>
+    <label><input type="checkbox" name="features" value="dashboard"> Tableau de bord</label>
+    <label><input type="checkbox" name="features" value="notif"> Notifications</label>
+  </fieldset>
 
-      <label>
-        <span data-i18n="payment"></span>
-        <textarea name="payment"></textarea>
-      </label>
-    </section>
+  <label>
+    <span data-i18n="features_custom"></span>
+    <small data-i18n="features_custom_help"></small>
+    <textarea name="features_custom"></textarea>
+  </label>
+</section>
 
-    <section class="form-section">
-      <h2 data-i18n="s6_title"></h2>
+<!-- STEP 4 -->
+<section class="step">
+  <h2 data-i18n="step4_title"></h2>
 
-      <label>
-        <span data-i18n="mvp"></span>
-        <textarea name="mvp"></textarea>
-      </label>
+  <label>
+    <span data-i18n="design_level"></span>
+    <small data-i18n="design_level_help"></small>
+    <input type="range" min="1" max="5" name="design_level" />
+  </label>
 
-      <label>
-        <span data-i18n="future"></span>
-        <textarea name="future"></textarea>
-      </label>
+  <label>
+    <span data-i18n="references"></span>
+    <small data-i18n="references_help"></small>
+    <textarea name="references"></textarea>
+  </label>
+</section>
 
-      <label>
-        <span data-i18n="constraints"></span>
-        <textarea name="constraints"></textarea>
-      </label>
-    </section>
+<!-- STEP 5 -->
+<section class="step">
+  <h2 data-i18n="step5_title"></h2>
 
-    <p class="consent">
-      <input type="checkbox" required />
-      <span data-i18n="consent"></span>
-    </p>
+  <label>
+    <span data-i18n="budget"></span>
+    <small data-i18n="budget_help"></small>
+    <input type="range" min="500" max="20000" step="500" name="budget" />
+  </label>
 
-    <button type="button" id="previewBtn" data-i18n="preview"></button>
+  <label>
+    <span data-i18n="deadline"></span>
+    <small data-i18n="deadline_help"></small>
+    <input type="date" name="deadline" />
+  </label>
+</section>
 
-    <!-- PREVIEW -->
-    <div id="preview" class="hidden">
-      <h2 data-i18n="preview_title"></h2>
-      <div id="previewContent"></div>
+<!-- PREVIEW -->
+<section class="step">
+  <h2 data-i18n="preview_title"></h2>
+  <div id="previewContent"></div>
 
-      <div class="preview-actions">
-        <button type="button" id="editBtn" data-i18n="edit"></button>
-        <button type="submit" data-i18n="send"></button>
-        <button type="button" id="pdfBtn">PDF</button>
-      </div>
-    </div>
-  </form>
+  <p class="consent">
+    <input type="checkbox" required />
+    <span data-i18n="consent"></span>
+  </p>
+
+  <button type="submit" data-i18n="send"></button>
+</section>
+
+<div class="nav-buttons">
+  <button type="button" id="prevBtn">←</button>
+  <button type="button" id="nextBtn">→</button>
+</div>
+
+</form>
 </main>
 
 <script src="i18n.js"></script>
